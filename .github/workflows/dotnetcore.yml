@@ -24,7 +24,7 @@ jobs:
       run: dotnet test ./eShopOnWeb.sln --configuration Release
       
     - name: Create the package
-      run: dotnet pack --configuration Release <./eShopOnWeb.sln>
+      run: dotnet pack --configuration Release ./eShopOnWeb.sln
       
-    - name: Publish the package to JFROG
-      run: dotnet nuget push <./eShopOnWeb.sln>/bin/Release/*.nupkg
+    # - name: Publish the package to JFROG
+    #   run: dotnet nuget push ./eShopOnWeb.sln/bin/Release/*.nupkg
