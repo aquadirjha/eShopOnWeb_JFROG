@@ -14,9 +14,9 @@ jobs:
       with:
         dotnet-version: '6.0.x'
         include-prerelease: true
-        source-url: https://sample113355.jfrog.io/artifactory/api/nuget/v3/default-nuget
-      env:
-        NUGET_AUTH_TOKEN: ${{secrets.NUGET_TOKEN}}
+        #source-url: https://sample113355.jfrog.io/artifactory/api/nuget/v3/default-nuget
+      # env:
+      #   NUGET_AUTH_TOKEN: ${{secrets.NUGET_TOKEN}}
     - name: Build with dotnet
       run: dotnet build ./eShopOnWeb.sln --configuration Release
     
