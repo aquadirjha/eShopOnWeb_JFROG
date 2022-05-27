@@ -30,7 +30,7 @@ jobs:
     #   run: dotnet nuget push ./eShopOnWeb.sln/bin/Release/*.nupkg
     - name: Upload Nuget Packages to JFrog Artifactory NuGet registry
     - uses: jfrog/setup-jfrog-cli@v2
-    - run: |
+      run: |
            jf --version
            jf c use --url https://sample113355.jfrog.io/artifactory/api/nuget/v3/default-nuget --user ${{ secrets.JF_USER }} --password ${{ secrets.JF_PASSWORD }}
            jf rt u Release/*.nupkg default-nuget/my-nuget
