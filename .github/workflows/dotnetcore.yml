@@ -14,9 +14,17 @@ jobs:
       with:
         dotnet-version: '6.0.x'
         include-prerelease: true
-
+        source-url: https://sample113355.jfrog.io/artifactory/api/nuget/v3/default-nuget
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.NUGET_TOKEN}}
     - name: Build with dotnet
       run: dotnet build ./eShopOnWeb.sln --configuration Release
     
     - name: Test with dotnet
       run: dotnet test ./eShopOnWeb.sln --configuration Release
+      
+    - name: Create the package
+      run: dotnet pack --configuration Release <./eShopOnWeb.sln>
+      
+    - name: Publish the package to JFROG
+      run: dotnet nuget push <./eShopOnWeb.sln>/bin/Release/*.nupkg
