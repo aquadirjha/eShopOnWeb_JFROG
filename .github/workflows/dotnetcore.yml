@@ -33,5 +33,7 @@ jobs:
     - name: Upload Nuget Packages to JFrog Artifactory NuGet registry
       run: |
            jf --version
-           jf c use https://sample113355.jfrog.io/artifactory/api/nuget/v3/default-nuget --user ${{ secrets.JF_USER }} --password ${{ secrets.JF_PASSWORD }}
+           jf c add --url https://sample113355.jfrog.io/artifactory/api/nuget/v3/default-nuget --user ${{ secrets.JF_USER }} --password ${{ secrets.JF_PASSWORD }}
            jf rt u Release/*.nupkg default-nuget/my-nuget
+
+
