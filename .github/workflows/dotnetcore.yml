@@ -36,4 +36,4 @@ jobs:
       run: |
            jf --version
            jf c add JFServer --artifactory-url https://sample113355.jfrog.io/artifactory/api/nuget/v3/default-nuget --user ${{ secrets.JF_USER }} --access-token ${{ secrets.JF_ACEESS_TOKEN }} --interactive=false
-           jf rt u /home/runner/work/eShopOnWeb_JFROG/eShopOnWeb_JFROG/src/Infrastructure/bin/Release/Infrastructure.1.0.0.nupkg default-nuget
+           jf rt u Infrastructure.1.0.0.nupkg default-nuget
