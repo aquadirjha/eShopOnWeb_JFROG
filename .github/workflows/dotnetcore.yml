@@ -30,8 +30,8 @@ jobs:
     # - name: Publish the package to JFROG
     #   run: dotnet nuget push ./eShopOnWeb.sln/bin/Release/*.nupkg
     - uses: jfrog/setup-jfrog-cli@v2
-      env:
-        JF_ENV_1: ${{ secrets.JF_PASSWORD}}      
+      # env:
+      #   JF_ENV_1: ${{ secrets.JF_PASSWORD}}      
     - name: Upload Nuget Packages to JFrog Artifactory NuGet registry
       run: |
            jf --version
