@@ -43,4 +43,4 @@ jobs:
       run: |
            cd /home/runner/work/eShopOnWeb_JFROG/eShopOnWeb_JFROG/src/BlazorShared/bin/Release/net6.0
            echo "Current Working location $(pwd)"
-           jf rt u BlazorShared.dll jf-nuget-repo-nuget/
+           jf rt u BlazorShared.dll jf-nuget-repo-nuget
