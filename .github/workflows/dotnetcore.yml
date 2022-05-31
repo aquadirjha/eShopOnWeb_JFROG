@@ -33,10 +33,14 @@ jobs:
     - uses: jfrog/setup-jfrog-cli@v2
       # env:
       #   JF_ENV_1: ${{ secrets.JF_PASSWORD}}      
-    - name: Upload Nuget Packages to JFrog Artifactory NuGet registry
+    - name: Setup JFrog Artifactory NuGet registry
       run: |
            jf --version
            jf c add JFServer --artifactory-url https://sample113355.jfrog.io/artifactory/api/nuget/v3/default-nuget --user ${{ secrets.JF_USER }} --access-token ${{ secrets.JF_ACEESS_TOKEN }}
+
+
+    - name: Upload Nuget Packages to JFrog Artifactory NuGet registry
+      run: |
            cd /home/runner/work/eShopOnWeb_JFROG/eShopOnWeb_JFROG/src/Infrastructure/bin/Release/
            echo "Current Working location $(pwd)"
            jf rt u Infrastructure.1.0.0.nupkg jf-nuget-repo-nuget/
