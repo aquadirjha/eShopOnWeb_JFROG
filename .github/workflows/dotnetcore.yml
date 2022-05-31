@@ -33,7 +33,7 @@ jobs:
     - uses: jfrog/setup-jfrog-cli@v2
       # env:
       #   JF_ENV_1: ${{ secrets.JF_PASSWORD}}      
-    - name: Setup JFrog Artifactory NuGet registry and uppload it to "jf-nuget-repo-nuget" Registry
+    - name: Setup JFrog Artifactory NuGet registry and upload it to "jf-nuget-repo-nuget" Registry
       run: |
            jf --version
            jf c add JFServer --artifactory-url ${{ secrets.JF_NUGET_ARTIFACTORY_URL }} --user ${{ secrets.JF_USER }} --access-token ${{ secrets.JF_ACEESS_TOKEN }}
@@ -51,5 +51,5 @@ jobs:
 
     - name: Download Nuget Packages from JFrog Artifactory NuGet registry
       run: |
-           jf rt dl jf-nuget-repo-nuget/*.nupkg
+           jf rt dl jf-nuget-repo-nuget/Infrastructure.1.0.0.nupkg
            ls -ltrs
