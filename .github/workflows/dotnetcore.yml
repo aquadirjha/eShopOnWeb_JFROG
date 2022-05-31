@@ -39,4 +39,4 @@ jobs:
            jf c add JFServer --artifactory-url https://sample113355.jfrog.io/artifactory --user ${{ secrets.JF_USER }} --access-token ${{ secrets.JF_ACEESS_TOKEN }}
            cd /home/runner/work/eShopOnWeb_JFROG/eShopOnWeb_JFROG/src/Infrastructure/bin/Release/
            echo "Current Working location $(pwd)"
-           jf rt u Infrastructure.1.0.0.nupkg default-nuget-remote/$(BuildName)   
+           jf rt u Infrastructure.1.0.0.nupkg default-nuget-remote/
