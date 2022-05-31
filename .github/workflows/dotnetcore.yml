@@ -46,3 +46,8 @@ jobs:
            jf rt u BlazorShared.dll jf-nuget-repo-nuget
            cd /home/runner/work/eShopOnWeb_JFROG/eShopOnWeb_JFROG/src/Infrastructure/bin/Release
            jf rt u Infrastructure.1.0.0.nupkg jf-nuget-repo-nuget/
+
+    - name: Download Nuget Packages from JFrog Artifactory NuGet registry
+      run: |
+           jf dl --bundle Infrastructure.1.0.0.nupkg/1.0.0
+           ls -ltrs
