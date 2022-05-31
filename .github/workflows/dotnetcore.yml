@@ -49,6 +49,6 @@ jobs:
 
     - name: Download Nuget Packages from JFrog Artifactory NuGet registry
       run: |
-           
-           jf rt dl jf-nuget-repo-nuget-remote-cache/*
+           export JFROG_CLI_TRANSITIVE_DOWNLOAD_EXPERIMENTAL=true
+           jf rt dl jf-nuget-repo-nuget/Infrastructure.1.0.0.nupkg
            ls -ltrs
