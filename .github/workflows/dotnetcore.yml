@@ -50,5 +50,5 @@ jobs:
     - name: Download Nuget Packages from JFrog Artifactory NuGet registry
       run: |
            
-           jf rt dl jf-nuget-repo-nuget/jf-nuget-repo-nuget/*
+           jf rt dl jf-nuget-repo-nuget/*
            ls -ltrs
