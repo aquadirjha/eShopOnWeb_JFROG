@@ -33,19 +33,19 @@ jobs:
     - uses: jfrog/setup-jfrog-cli@v2
       # env:
       #   JF_ENV_1: ${{ secrets.JF_PASSWORD}}      
-    - name: Setup JFrog Artifactory NuGet registry and uppload it to "jf-nuget-repo-nuget" Registry
+    - name: Setup JFrog Artifactory NuGet registry
       run: |
            jf --version
            jf c add JFServer --artifactory-url ${{ secrets.JF_NUGET_ARTIFACTORY_URL }} --user ${{ secrets.JF_USER }} --access-token ${{ secrets.JF_ACEESS_TOKEN }}
+
+
+    - name: Upload Nuget Packages to JFrog Artifactory NuGet registry
+      run: |
            cd /home/runner/work/eShopOnWeb_JFROG/eShopOnWeb_JFROG/src/BlazorShared/bin/Release/net6.0
            echo "Current Working location $(pwd)"
            jf rt u BlazorShared.dll jf-nuget-repo-nuget
            cd /home/runner/work/eShopOnWeb_JFROG/eShopOnWeb_JFROG/src/Infrastructure/bin/Release
            jf rt u Infrastructure.1.0.0.nupkg jf-nuget-repo-nuget/
-
-    - name: Upload Nuget Packages to JFrog Remote Artifactory NuGet registry
-      run: |
-           jf rt u Infrastructure.1.0.0.nupkg jf-nuget-repo-nuget-remote-cache/
 
     - name: Download Nuget Packages from JFrog Artifactory NuGet registry
       run: |
