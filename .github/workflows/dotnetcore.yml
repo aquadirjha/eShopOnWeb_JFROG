@@ -46,6 +46,7 @@ jobs:
     - name: Upload Nuget Packages to JFrog Remote Artifactory NuGet registry
       run: |
            jf c add JFServer1 --artifactory-url https://sample113355.jfrog.io/artifactory/jf-nuget-repo-nuget-remote-cache/ --user ${{ secrets.JF_USER }} --access-token ${{ secrets.JF_ACEESS_TOKEN }}
+           cd /home/runner/work/eShopOnWeb_JFROG/eShopOnWeb_JFROG/src/Infrastructure/bin/Release
            jf rt u Infrastructure.1.0.0.nupkg jf-nuget-repo-nuget-remote-cache/
 
     - name: Download Nuget Packages from JFrog Artifactory NuGet registry
