@@ -43,4 +43,4 @@ jobs:
       run: |
            cd /home/runner/work/eShopOnWeb_JFROG/eShopOnWeb_JFROG/src/Infrastructure/bin/Release/
            echo "Current Working location $(pwd)"
-           jf rt u Infrastructure.1.0.0.nupkg jf-nuget-repo-nuget/
+           jf rt u /home/runner/work/eShopOnWeb_JFROG/eShopOnWeb_JFROG/src/BlazorShared/bin/Release/net6.0/BlazorShared.dll jf-nuget-repo-nuget/
