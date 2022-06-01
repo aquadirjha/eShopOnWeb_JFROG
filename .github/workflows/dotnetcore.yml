@@ -56,4 +56,5 @@ jobs:
       run: |
            echo "Current Working location $(pwd)"
            ls -ltrs
-           jf rt download jf-nuget-repo-nuget/Infrastructure.1.0.0.nupkg
+           jfrog rt download jf-nuget-repo-nuget-local/Infrastructure.1.0.0.nupkg dependencies\
+           jfrog rt download jf-nuget-repo-nuget-local/BlazorShared.dll dependencies\
