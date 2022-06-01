@@ -56,13 +56,8 @@ jobs:
       run: |
            echo "Current Working location $(pwd)"
            ls -ltrs
-           jfrog rt download jf-nuget-repo-nuget-local/* .
-           echo 
-           jfrog rt download jf-nuget-repo-nuget-local/BlazorShared.dll .
+           jfrog rt download jf-nuget-repo-nuget-local/jf-nuget-repo-nuget/* .
            echo
-           jfrog rt download BlazorShared.dll .
            echo
-           jfrog rt download Infrastructure.1.0.0.nupkg .
-           echo
-           jfrog rt download sample-docker-local/repository.catalog
+           ls -ltrs
 
