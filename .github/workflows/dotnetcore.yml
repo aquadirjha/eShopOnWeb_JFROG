@@ -42,9 +42,9 @@ jobs:
            jf c add TESTJFServer --artifactory-url ${{ secrets.TESTARTIFACTORY}} --user ${{ secrets.TESTUSER }} --access-token ${{ secrets.TESTTOKEN }}
            cd /home/runner/work/eShopOnWeb_JFROG/eShopOnWeb_JFROG/src/BlazorShared/bin/Release/net6.0
            echo "Current Working location $(pwd)"
-           jf rt u BlazorShared.dll default-generic-local/NuGet
+           jf rt u BlazorShared.dll default-generic-local/
            cd /home/runner/work/eShopOnWeb_JFROG/eShopOnWeb_JFROG/src/Infrastructure/bin/Release
-           jf rt u Infrastructure.1.0.0.nupkg default-generic-local/NuGet
+           jf rt u Infrastructure.1.0.0.nupkg default-generic-local/
 
     # - name: Upload Nuget Packages to JFrog Remote Artifactory NuGet registry
     #   run: |
@@ -56,8 +56,9 @@ jobs:
       run: |
            echo "Current Working location $(pwd)"
            ls -ltrs
-           jfrog rt download default-generic-local/NuGet/*.nupkg .
+           jfrog rt download default-generic-local/* downloads/
            echo
            echo
+           cd downloads
            ls -ltrs
 
