@@ -52,12 +52,12 @@ jobs:
     #        cd /home/runner/work/eShopOnWeb_JFROG/eShopOnWeb_JFROG/src/Infrastructure/bin/Release
     #        jf rt u Infrastructure.1.0.0.nupkg /
 
-    # - name: Download Nuget Packages from JFrog Artifactory NuGet registry
-    #   run: |
-    #        echo "Current Working location $(pwd)"
-    #        ls -ltrs
-    #        jfrog rt download jf-nuget-repo-nuget-local/jf-nuget-repo-nuget/* .
-    #        echo
-    #        echo
-    #        ls -ltrs
+    - name: Download Nuget Packages from JFrog Artifactory NuGet registry
+      run: |
+           echo "Current Working location $(pwd)"
+           ls -ltrs
+           jfrog rt download default-generic-local/NuGet/*.nupkg .
+           echo
+           echo
+           ls -ltrs
 
